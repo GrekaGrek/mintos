@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: anbi
+    password: word
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+
+  flyway:
+    url: jdbc:postgresql://localhost:5432/postgres
+    locations: classpath:db/migration
+    user: anbi
+    password: word
+    validate-on-migrate: false
+    baseline-on-migrate: true
+
+logging:
+  level:
+    org.hibernate: DEBUG
+
+exchange-rates:
+  api: "https://v6.exchangerate-api.com/v6/6cc3efb2aca092b077fe0ffe/latest"
